@@ -1,0 +1,12 @@
+docker pull mcr.microsoft.com/mssql/server:2025-latest
+docker run -e ACCEPT_EULA=Y -e MSSQL_USER=chilli -e MSSQL_DB=main -e MSSQL_PASSWORD=S3cur3P@ssw0rd! -e MSSQL_SA_PASSWORD=Str0ngP@ssw0rd! mcr.microsoft.com/mssql/server:2025-latest
+
+docker volume create mssql_volume
+docker run --volume mssql_volume
+
+docker run -e ACCEPT_EULA=Y -e MSSQL_USER=chilli -e MSSQL_DB=main -e MSSQL_PASSWORD=S3cur3P@ssw0rd! -e MSSQL_SA_PASSWORD=S3cur3P@ssw0rd! --mount source=mssql_volume,target=/volume mcr.microsoft.com/mssql/server:2025-latest
+
+_______________________________________________________________________________________
+
+docker pull postgres:latest
+docker run postgres -e POSTGRES_USER=chilli -e POSTGRES_PASSWORD=S3cur3P@ssw0rd! -e POSTGRES_DB=main

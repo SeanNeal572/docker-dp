@@ -9,7 +9,7 @@ services:
       MSSQL_USER: chilli
       MSSQL_DB: main
       MSSQL_PASSWORD: S3cur3P@ssw0rd!
-      MSSQL_SA_PASSWORD: Str0ngP@ssw0rd!
+      MSSQL_SA_PASSWORD: S3cur3P@ssw0rd!
   postgres:
     container_name: postgres
     image: postgres
