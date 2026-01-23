@@ -1,0 +1,22 @@
+services:
+  docker-dp-postgres:
+    image: postgres:latest
+    container_name: docker-dp-postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=chilli
+      - POSTGRES_PASSWORD=S3cur3P@ssw0rd!
+      - POSTGRES_DB=main
+
+  docker-dp-mssql:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    container_name: docker-dp-mssql
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_USER=chilli
+      - MSSQL_DB=main
+      - MSSQL_PASSWORD=S3cur3P@ssw0rd!
+      - MSSQL_SA_PASSWORD=Str0ngP@ssw0rd!
