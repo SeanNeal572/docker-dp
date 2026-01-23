@@ -1,3 +1,3 @@
 cd services/event-scheduler &&
-dotnet test --logger:"console;verbosity=detailed" &&
+dotnet test --verbosity quiet -p:NoWarn=NU1701
 cd ../..
