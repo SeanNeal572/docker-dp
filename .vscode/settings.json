@@ -1,0 +1,43 @@
+{
+	"console-ninja.featureSet": "Community",
+	"totalTypeScript.hideAllTips": false,
+	"totalTypeScript.hideBasicTips": true,
+
+	/* General Editor Settings */
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit"
+	},
+
+	/* YAML Configuration */
+	"[yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"yaml.format.enable": false,
+
+	/* JavaScript & React Configuration */
+	"[javascript]": {
+		"editor.formatOnSave": false
+	},
+	"[javascriptreact]": {
+		"editor.formatOnSave": false
+	},
+
+	/* ESLint Settings */
+	"eslint.alwaysShowStatus": true,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+
+	/* Prettier Rules */
+	"prettier.useTabs": true,
+	"prettier.jsxSingleQuote": false,
+	"prettier.tabWidth": 2,
+	"prettier.arrowParens": "avoid",
+	"prettier.singleQuote": false
+}

@@ -1,0 +1,20 @@
+services:
+  # MSSQL Service
+  mssql-server:
+    extends:
+      file: ./mssql/docker-compose.yaml
+      service: sqlserver # This must match the service name inside /mssql/docker-compose.yml
+    env_file: .env
+
+  # Postgres Service
+  postgres-server:
+    extends:
+      file: ./postgres/docker-compose.yaml
+      service: postgres # This must match the service name inside /postgres/docker-compose.yml
+    env_file: .env
+    depends_on:
+      mssql-server:
+        condition: service_healthy
+volumes:
+  mssql_data:
+  postgres_data:

@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    container_name: sql2025_server
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+      - MSSQL_USER=${CHILLI_USER}
+      - MSSQL_PASSWORD=${CHILLI_PASSWORD}
+      - MSSQL_DB=${DATABASE_NAME}
+      - MSSQL_PID=Developer
+    ports:
+      - "2025:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P '${MSSQL_SA_PASSWORD}' -Q 'SELECT 1'",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mssql_data:
+    driver: local
