@@ -1,4 +1,4 @@
-import { User } from "../../../src/types";
+import { User } from "@/types";
 import { baseFactory } from "./base.factory";
 import { faker } from "@faker-js/faker";
 

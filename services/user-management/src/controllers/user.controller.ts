@@ -1,5 +1,5 @@
 import express, { Express } from "express"
-import * as userRepository from "../repositories/user.repository"
+import * as userRepository from "@/repositories/user.repository"
 import { User } from "../types"
 
 const controller = express()

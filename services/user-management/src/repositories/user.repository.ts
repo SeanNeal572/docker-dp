@@ -1,4 +1,4 @@
-import { User } from "../types";
+import { User } from "@/types";
 import { connect } from "./datasource";
 import { first } from "lodash";
 

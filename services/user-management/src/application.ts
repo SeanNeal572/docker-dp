@@ -1,10 +1,10 @@
 import express, { Express } from 'express'
-import { userController } from './controllers/user.controller'
+import { userController } from '@/controllers/user.controller'
 import swaggerUi from 'swagger-ui-express'
 import swaggerDocument from "../swagger.json"
-import { usersController } from './controllers/users.controller'
-import { errorHandler } from './controllers/util'
-import { devController } from './controllers/dev.controller'
+import { usersController } from '@/controllers/users.controller'
+import { errorHandler } from '@/controllers/util'
+import { devController } from '@/controllers/dev.controller'
 
 const api = express()
 

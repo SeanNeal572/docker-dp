@@ -1,4 +1,4 @@
-import { env } from "../envConfig";
+import { env } from "@/envConfig";
 import { knex } from "knex";
 
 const knexPool = knex({

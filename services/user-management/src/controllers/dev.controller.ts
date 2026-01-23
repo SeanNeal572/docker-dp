@@ -1,5 +1,5 @@
 import express, { Express } from "express"
-import { connect } from "../repositories/datasource"
+import { connect } from "@/repositories/datasource"
 
 const controller = express()
 
