@@ -1,2 +1,2 @@
 #! /bin/bash
-docker compose -f ./mssql-compose.yaml up
+docker compose -f $1 up

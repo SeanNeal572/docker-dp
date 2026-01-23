@@ -1,0 +1,19 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_USER: "chilli"
+      MSSQL_DB: "main"
+      MSSQL_PASSWORD: "S3cur3P@ssw0rd!"
+      MSSQL_SA_PASSWORD: "Str0ngP@ssw0rd!"
+    networks:
+      - default
+
+    volumes:
+      - db-data:/home/db/data
+
+volumes:
+  db-data:
