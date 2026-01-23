@@ -1,0 +1,1 @@
+__scripts/test-event-scheduler.sh && __scripts/test-user-management.sh
