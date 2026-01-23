@@ -4,7 +4,7 @@ docker run -e ACCEPT_EULA=Y -e MSSQL_USER=chilli -e MSSQL_DB=main -e MSSQL_PASSW
 docker volume create mssql_volume
 docker run --volume mssql_volume
 
-docker run -e ACCEPT_EULA=Y -e MSSQL_USER=chilli -e MSSQL_DB=main -e MSSQL_PASSWORD=S3cur3P@ssw0rd! -e MSSQL_SA_PASSWORD=S3cur3P@ssw0rd! --mount source=mssql_volume,target=/volume mcr.microsoft.com/mssql/server:2025-latest
+docker run -e ACCEPT_EULA=Y -e MSSQL_USER=chilli -e MSSQL_DB=main -e MSSQL_PASSWORD=S3cur3P@ssw0rd! -e MSSQL_SA_PASSWORD=S3cur3P@ssw0rd! -v mssql_volume:/var/opt/mssql mcr.microsoft.com/mssql/server:2025-latest
 
 _______________________________________________________________________________________
 
