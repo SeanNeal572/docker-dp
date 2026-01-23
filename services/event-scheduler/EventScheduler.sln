@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventScheduler.Api", "EventScheduler.Api\EventScheduler.Api.csproj", "{2151C0F5-28ED-4457-9D4A-7CEC452F78D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventScheduler.Core", "EventScheduler.Core\EventScheduler.Core.csproj", "{1C0DCA73-9BE7-4206-A07A-04C7909FAD66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventScheduler.Db", "EventScheduler.Db\EventScheduler.Db.csproj", "{BE74D763-FA6C-4AEA-9574-EC37580D548B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventScheduler.Db.Postgres", "EventScheduler.Db.Postgres\EventScheduler.Db.Postgres.csproj", "{3ED546FA-E970-4CC2-8206-8427B49F536D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventScheduler.Db.Mssql", "EventScheduler.Db.Mssql\EventScheduler.Db.Mssql.csproj", "{7B4BDE57-332C-4D9A-8648-89D8CD81B51B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventScheduler.TestInfrastructure", "EventScheduler.TestInfrastructure\EventScheduler.TestInfrastructure.csproj", "{DA7D6AF0-5EC1-4C5C-8F4B-0A5CE7D88675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventScheduler.Db.Tests", "EventScheduler.Db.Tests\EventScheduler.Db.Tests.csproj", "{DCB575DC-9F12-44CE-8255-A8E8056ECA90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2151C0F5-28ED-4457-9D4A-7CEC452F78D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2151C0F5-28ED-4457-9D4A-7CEC452F78D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2151C0F5-28ED-4457-9D4A-7CEC452F78D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2151C0F5-28ED-4457-9D4A-7CEC452F78D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C0DCA73-9BE7-4206-A07A-04C7909FAD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C0DCA73-9BE7-4206-A07A-04C7909FAD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C0DCA73-9BE7-4206-A07A-04C7909FAD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C0DCA73-9BE7-4206-A07A-04C7909FAD66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE74D763-FA6C-4AEA-9574-EC37580D548B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE74D763-FA6C-4AEA-9574-EC37580D548B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE74D763-FA6C-4AEA-9574-EC37580D548B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE74D763-FA6C-4AEA-9574-EC37580D548B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED546FA-E970-4CC2-8206-8427B49F536D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED546FA-E970-4CC2-8206-8427B49F536D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED546FA-E970-4CC2-8206-8427B49F536D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED546FA-E970-4CC2-8206-8427B49F536D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B4BDE57-332C-4D9A-8648-89D8CD81B51B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4BDE57-332C-4D9A-8648-89D8CD81B51B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4BDE57-332C-4D9A-8648-89D8CD81B51B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4BDE57-332C-4D9A-8648-89D8CD81B51B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7D6AF0-5EC1-4C5C-8F4B-0A5CE7D88675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7D6AF0-5EC1-4C5C-8F4B-0A5CE7D88675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7D6AF0-5EC1-4C5C-8F4B-0A5CE7D88675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7D6AF0-5EC1-4C5C-8F4B-0A5CE7D88675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB575DC-9F12-44CE-8255-A8E8056ECA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB575DC-9F12-44CE-8255-A8E8056ECA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB575DC-9F12-44CE-8255-A8E8056ECA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB575DC-9F12-44CE-8255-A8E8056ECA90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFA27EF2-A2A8-4F5E-9E07-9D0A98E01935}
+	EndGlobalSection
+EndGlobal

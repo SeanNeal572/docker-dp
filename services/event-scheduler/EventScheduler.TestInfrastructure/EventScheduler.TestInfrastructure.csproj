@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Faker" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventScheduler.Core\EventScheduler.Core.csproj" />
+    <ProjectReference Include="..\EventScheduler.Db.Mssql\EventScheduler.Db.Mssql.csproj" />
+    <ProjectReference Include="..\EventScheduler.Db.Postgres\EventScheduler.Db.Postgres.csproj" />
+  </ItemGroup>
+
+</Project>
