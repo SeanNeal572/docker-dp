@@ -1,0 +1,2 @@
+#! /bin/bash
+docker build -t docker-dp/user-management:latest -f dockerfile-user-management.yaml .

@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0
+
+WORKDIR /home/app
+COPY ./services/event-scheduler/ /home/app
+
+RUN dotnet build
+
+EXPOSE 8081
+CMD dotnet run --urls "http://0.0.0.0:8081" --project EventScheduler.Api

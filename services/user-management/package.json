@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "npm run build && npm run migrate && dotenvx run --quiet -- node dist/src/index.js",
     "start": "npm run migrate && node dist/src/index.js",
+    "startwithoutmigrations": "node dist/src/index.js",
     "build": "rimraf dist && tsc -p ./tsconfig.build.json && tsc-alias -p ./tsconfig.build.json",
     "test": "npm run build && npm run migrate && dotenvx run --quiet -- vitest",
     "migrate": "dotenvx run --quiet -- node ./dist/src/repositories/migrate.js"

@@ -1,0 +1,2 @@
+#! /bin/bash
+docker build -t docker-dp/event-scheduler:latest -f dockerfile-event-scheduler.yaml .
