@@ -1,0 +1,17 @@
+services:
+  docker-dp-postgres:
+    image: postgres:latest
+    container_name: docker-dp-postgres
+    ports:
+      - 5432:5432
+    env_file:
+      - ./.env.postgres
+    volumes:
+      - created-from-compose:/var/lib/postgresql
+      # - dp-user-management:/var/lib/postgresql
+
+volumes:
+  created-from-compose:
+    external: false
+  #dp-user-management:
+  # external: true
