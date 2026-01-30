@@ -19,7 +19,7 @@ namespace EventScheduler.Core
         public static readonly string DbPort = DbProvider switch
         {
             "postgres" => DbConfiguration["PortPostgres"] ?? throw new DbConfigException("PortPostgres"),
-            "mssql-dp" => DbConfiguration["PortMssql"] ?? throw new DbConfigException("PortMssql"),
+            "mssql" => DbConfiguration["PortMssql"] ?? throw new DbConfigException("PortMssql"),
             _ => throw new Exception("Invalid database provider")
         };
         public static readonly string DbUser = DbConfiguration["User"] ?? throw new DbConfigException("User");
