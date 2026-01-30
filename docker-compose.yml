@@ -1,0 +1,122 @@
+services:
+  # Application Services
+  user-management:
+    image: docker-dp/user-management:latest
+    container_name: docker-dp-user-management
+    build:
+      context: services/user-management
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      DB_PROVIDER: "postgresql"  # or "mssql"
+      DB_PORT_POSTGRES: "5432"
+      DB_PORT_MSSQL: "1433"
+      DB_HOST: "postgres-db" 
+      DB_USER: "chilli"
+      DB_PASSWORD: "S3cur3P@ssw0rd!"
+      DB_DATABASE: "main"
+    networks:
+      - docker-dp
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  event-scheduler:
+    image: docker-dp/event-scheduler:latest
+    container_name: docker-dp-event-scheduler
+    build:
+      context: services/event-scheduler
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    environment:
+      Db:Provider: "postgresql"  # or "mssql"
+      Db:PortPostgres: "5432"
+      Db:PortMssql: "1433"
+      Db:Host: "postgres-db" 
+      Db:User: "chilli"
+      Db:Password: "S3cur3P@ssw0rd!"
+      Db:Database: "main"
+    networks:
+      - docker-dp
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Microsoft SQL Server
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    container_name: mssql-db
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_USER: "chilli"
+      MSSQL_DB: "main"
+      MSSQL_PASSWORD: "S3cur3P@ssw0rd!"
+      MSSQL_SA_PASSWORD: "Str0ngP@ssw0rd!"
+    volumes:
+      # Named volume
+      - mssql_data:/var/opt/mssql
+      
+      # External volume
+      # - mssql_external:/var/opt/mssql
+
+    networks:
+      docker-dp:
+        aliases:
+          - db
+    healthcheck:
+      test: ["/opt/mssql-tools18/bin/sqlcmd", "-U", "sa", "-P", "$${MSSQL_SA_PASSWORD}", "-C", "-Q", "SELECT 1", "-b", "-o", "/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  # PostgreSQL
+  postgres:
+    image: postgres:latest
+    container_name: postgres-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "chilli"
+      POSTGRES_PASSWORD: "S3cur3P@ssw0rd!"
+      POSTGRES_DB: "main"
+    volumes:
+      # Named volume
+      - postgres_data:/var/lib/postgresql/data
+      
+      # External volume
+      # - postgres_external:/var/lib/postgresql/data
+
+    networks:
+      docker-dp:
+        aliases:
+          - db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+volumes:
+  # Named volumes
+  mssql_data:
+  postgres_data:
+  
+  # External volumes
+  # mssql_external:
+  #   external: true
+  # postgres_external:
+  #   external: true
+
+networks:
+  docker-dp:
+    driver: bridge
