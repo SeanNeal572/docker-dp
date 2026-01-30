@@ -1,5 +1,3 @@
-## 1
-
 ### MSSQL
 
 docker pull mcr.microsoft.com/mssql/server:2025-latest
