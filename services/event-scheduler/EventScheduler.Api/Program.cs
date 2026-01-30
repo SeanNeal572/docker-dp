@@ -18,7 +18,7 @@ builder.Services.AddTransient<IEventRepository, EventRepository>();
 switch (EnvironmentConfig.DbProvider)
 {
     case "postgres": builder.Services.AddTransient<IAppDbContext, PostgresDbContext>(); break;
-    case "mssql": builder.Services.AddTransient<IAppDbContext, MssqlDbContext>(); break;
+    case "mssql-dp": builder.Services.AddTransient<IAppDbContext, MssqlDbContext>(); break;
     default: throw new Exception("Invalid database provider");
 }
 
