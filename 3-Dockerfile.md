@@ -13,6 +13,7 @@ The goal of this exercise is learn how to containerize your application using th
   - `http://localhost:8080/swagger`
   - `http://localhost:8081/swagger`
 - Note that due to how docker containers communicate with each other, your applications won't be able to connect to your database unless you set up the networking correctly. As long as you are able to see the swagger dashboard you will know that your application is running. Networks will be the topic of the next exercise.
+- Once you have learnt about docker networks and can get your containerized application to comunicate to your, you can update your Dockerfiles to run the migrations before running the application.
 
 ## Ports
 

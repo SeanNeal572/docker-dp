@@ -33,7 +33,7 @@ controller.patch("/:userId", async (req, res, next) => {
   }
 })
 
-controller.patch("/:userId", async (req, res, next) => {
+controller.delete("/:userId", async (req, res, next) => {
   try {
     const { userId } = req.params
     await userRepository.removeUser(Number(userId))
