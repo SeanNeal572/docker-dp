@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: docker-dp/user-management:latest
+    container_name: user_management_web_api
+    restart: always
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G

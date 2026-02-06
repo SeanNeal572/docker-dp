@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: docker-dp/event-scheduler:latest
+    container_name: event_scheduler_web_api
+    restart: always
+    ports:
+      - "8081:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
