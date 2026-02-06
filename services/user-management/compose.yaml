@@ -1,0 +1,9 @@
+services:
+  user-management:
+    image: docker-dp/user-management:latest
+    container_name: app
+    ports:
+      - 8080:8080
+    env_file:
+      - ./.env
+    build: .
