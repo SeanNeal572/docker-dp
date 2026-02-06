@@ -89,3 +89,11 @@ Attach SQL Server to the network:
 ```bash
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Password1234$" -p 1433:1433 --name sqlserver -v sqlserverdata:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2022-latest --network myapp-net
 ```
+
+## .NET
+
+After creating a docker image, run it with the following command:
+
+```bash
+docker run -d --name webapi --network myapp-net -p 5000:8080 mywebapi:dev
+```
