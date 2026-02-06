@@ -4,9 +4,17 @@ docker run -e ACCEPT_EULA=Y -e MSSQL_USER=chilli -e MSSQL_DB=main -e MSSQL_PASSW
 docker volume create mssql_volume
 docker run --volume mssql_volume
 
-docker run -e ACCEPT_EULA=Y -e MSSQL_USER=chilli -e MSSQL_DB=main -e MSSQL_PASSWORD=S3cur3P@ssw0rd! -e MSSQL_SA_PASSWORD=S3cur3P@ssw0rd! -v mssql_volume:/var/opt/mssql mcr.microsoft.com/mssql/server:2025-latest
+docker run -e ACCEPT_EULA=Y -e MSSQL_USER=chilli -e MSSQL_DB=main -e MSSQL_PASSWORD=S3cur3P@ssw0rd! -e MSSQL_SA_PASSWORD=S3cur3P@ssw0rd! -v mssql_volume:/var/opt/mssql --name mssql-dp3 mcr.microsoft.com/mssql/server:2025-latest
 
+
+dotnet ef database update --project EventScheduler.Db.Mssql/EventScheduler.Db.Mssql.csproj --startup-project EventScheduler.Api/EventScheduler.Api.csproj
 _______________________________________________________________________________________
 
 docker pull postgres:latest
 docker run postgres -e POSTGRES_USER=chilli -e POSTGRES_PASSWORD=S3cur3P@ssw0rd! -e POSTGRES_DB=main
+
+----------------------------------
+
+docker build -f dist/volume-3/Dockerfile . -t docker-dp/event-scheduler:latest --build-arg Db:Provider=mssql --build-arg Db:PortMssql=1433 --build-arg Db:Host=localhost --build-arg Db:User=chilli --build-arg Db:Password=S3cur3P@ssw0rd! --build-arg Db:Database=main
+
+docker run -e Db:Provider=mssql -e Db:PortMssql=1433 -e Db:Host=localhost -e Db:User=chilli -e Db:Password=S3cur3P@ssw0rd! -e Db:Database=main -d -p 8081:8080 --name events-api docker-dp/event-scheduler:latest
