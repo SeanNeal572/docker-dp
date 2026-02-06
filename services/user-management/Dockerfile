@@ -26,4 +26,4 @@ COPY --from=builder /app/dist ./dist
 
 # Start the app
 EXPOSE 8080
-CMD ["npm", "start"]
+CMD ["npx", "@dotenvx/dotenvx", "run", "--", "npm", "start"]

@@ -1,7 +1,9 @@
 services:
-  postgres:
+  usermanagement:
     image: docker-dp/user-management:latest
     container_name: user_management_web_api
+    environment:
+      - DB_HOST=${DB_HOST}
     restart: always
     ports:
       - "8080:8080"

@@ -15,6 +15,13 @@ services:
     depends_on:
       mssql-server:
         condition: service_healthy
+
+  usermanagement-client:
+    extends:
+      file: ./user-management/docker-compose.yaml
+      service: usermanagement # This must match the service name inside /postgres/docker-compose.yml
+    env_file: .env
+
 volumes:
   mssql_data:
   postgres_data:

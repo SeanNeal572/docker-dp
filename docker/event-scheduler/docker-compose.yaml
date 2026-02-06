@@ -1,5 +1,5 @@
 services:
-  postgres:
+  eventscheduler:
     image: docker-dp/event-scheduler:latest
     container_name: event_scheduler_web_api
     restart: always
